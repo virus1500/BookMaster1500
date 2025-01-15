@@ -1,0 +1,23 @@
+﻿<Window x:Class="BookMaster1500.Viev.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookMaster1500.Viev.Windows"
+        mc:Ignorable="d"
+        Title="Bookmaster3000" MinHeight="720" Height="900" 
+        MinWidth="1280" Width="1600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem/>
+            <MenuItem/>
+            <MenuItem/>
+        </Menu>
+        
+    </Grid>
+</Window>
