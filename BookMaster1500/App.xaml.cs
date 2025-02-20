@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BookMaster1500.Model;
 using System.Windows;
 
 namespace BookMaster1500
@@ -13,5 +8,7 @@ namespace BookMaster1500
     /// </summary>
     public partial class App : Application
     {
+        // Создаём контекст данных
+        public static BookMasterEntities context = new BookMasterEntities();
     }
 }
