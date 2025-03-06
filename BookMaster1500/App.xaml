@@ -4,6 +4,17 @@
              xmlns:local="clr-namespace:BookMaster1500"
              StartupUri="Viev\Windows\MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="\Style\ButtonStyle.xaml"/>
+                <ResourceDictionary Source="\Style\ComboBoxStyle.xaml"/>
+                <ResourceDictionary Source="\Style\GridSplitterStyle.xaml"/>
+                <ResourceDictionary Source="\Style\MenuStyle.xaml"/>
+                <ResourceDictionary Source="\Style\PasswordBoxStyle.xaml"/>
+                <ResourceDictionary Source="\Style\TabControlStyle.xaml"/>
+                <ResourceDictionary Source="\Style\TextBlockStyle.xaml"/>
+                <ResourceDictionary Source="\Style\TextBoxStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
