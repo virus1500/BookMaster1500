@@ -39,13 +39,13 @@
             <Image Source="\Resourses\Images\logo.png" Grid.ColumnSpan="3"/>
 
             <TextBlock Grid.Row="2" Text="Название"/>
-            <TextBox Grid.Row="2" Grid.Column="2"/>
+            <TextBox x:Name="SearchByBookTitleTb" Grid.Row="2" Grid.Column="2"/>
             <TextBlock Grid.Row="4" Text="Автор"/>
-            <TextBox Grid.Row="4" Grid.Column="2"/>
+            <TextBox x:Name="SearchByAuthorNameTb" Grid.Row="4" Grid.Column="2"/>
             <TextBlock Grid.Row="6" Text="Жанр"/>
-            <TextBox Grid.Row="6" Grid.Column="2"/>
+            <TextBox x:Name="SearchByBookSubjectTb" Grid.Row="6" Grid.Column="2"/>
 
-            <Button Grid.Row="8" Grid.Column="2" Content="Найти"/>
+            <Button Grid.Row="8" Grid.Column="2" Content="Найти" Name="SearchBtn" Click="SearchBtn_Click" Cursor="Hand"/>
 
         </Grid>
         <!--#endregion-->
