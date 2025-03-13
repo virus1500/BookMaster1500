@@ -22,6 +22,7 @@ namespace BookMaster1500.Viev.Pages
         {
             //Алгоритм поиска
             BookAuthorLv.ItemsSource = _bookAuthors.Where(bookAuthors => bookAuthors.Book.Title.ToLower().Contains(SearchByBookTitleTb.Text.ToLower()) && bookAuthors.Author.Name.ToLower().Contains(SearchByAuthorNameTb.Text.ToLower()));
+
         }
     }
 }
