@@ -66,6 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AppData\PagenationService.cs" />
     <Compile Include="Model\Administrator.cs">
       <DependentUpon>BookMasterModel.tt</DependentUpon>
     </Compile>
@@ -174,7 +175,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AppData\" />
     <Folder Include="Resourses\Fonts\" />
   </ItemGroup>
   <ItemGroup>
