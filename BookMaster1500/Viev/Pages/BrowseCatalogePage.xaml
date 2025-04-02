@@ -50,14 +50,14 @@
         </Grid>
         <!--#endregion-->
 
-        <Grid Grid.Column="2">
+            <!-- Region Результат поиска-->
+        <Grid x:Name="SearchResultsGrid" Grid.Column="2" Visibility="Hidden">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="15" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             
-            <!-- Region Результат поиска-->
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
@@ -73,6 +73,31 @@
                         </GridView>
                     </ListView.View>
                 </ListView>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Страница"/>
+
+                    <Button Name="PreviousBookBtn" Grid.Column="2" Content="&lt;" Click="PreviousBookBtn_Click"/>
+                    <TextBox x:Name="CurrentPageTb" Grid.Column="4" HorizontalContentAlignment="Center" TextChanged="CurrentPageTb_TextChanged"/>
+                    <Button x:Name="NextBookBtn" Grid.Column="6" Content="&gt;" Click="NextBookBtn_Click"/>
+                    <TextBlock x:Name="TotalPagesTbl" Grid.Column="8"/>
+                    <TextBlock x:Name="TotalBooksTbl" Grid.Column="12"/>
+                </Grid>
             </Grid>                
             <!--#endregion-->
         </Grid>

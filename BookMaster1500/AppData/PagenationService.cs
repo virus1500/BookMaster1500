@@ -18,6 +18,10 @@ namespace BookMaster1500.AppData
         public int TotalPages => (BooksCount + PageSize - 1) / PageSize;
 
         public List<Book> CurrentPageOfBooks => _books.Skip(_currentPageIndex * PageSize).Take(PageSize).ToList();
-
+        //Определеяем конструктор класса для создания объекта пагинации, в ко нструстор передаем полный список книг
+        public PagenationService(List<Book> books)
+        {
+            _books = books;
+        }
     }
 }
