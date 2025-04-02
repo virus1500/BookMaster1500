@@ -40,8 +40,8 @@ namespace BookMaster1500.Viev.Pages
             }
             BookAuthorLv.ItemsSource = _booksPageination.CurrentPageOfBooks;
 
-            TotalPagesTbl.Text = _booksPageination.TotalPages.ToString();
-            TotalBooksTbl.Text = _booksPageination.BooksCount.ToString();
+            TotalPagesTbl.DataContext = TotalBooksTbl.DataContext = _booksPageination;
+
 
             SearchResultsGrid.Visibility = System.Windows.Visibility.Visible;
         }

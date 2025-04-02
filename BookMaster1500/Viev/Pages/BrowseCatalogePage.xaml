@@ -8,7 +8,7 @@
       d:DesignHeight="800" d:DesignWidth="1580"
       Title="Просмотр каталога">
 
-    <Grid>
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="10"/>
@@ -88,15 +88,15 @@
                         <ColumnDefinition Width="10"/>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="10"/>
-                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Text="Страница"/>
 
                     <Button Name="PreviousBookBtn" Grid.Column="2" Content="&lt;" Click="PreviousBookBtn_Click"/>
                     <TextBox x:Name="CurrentPageTb" Grid.Column="4" HorizontalContentAlignment="Center" TextChanged="CurrentPageTb_TextChanged"/>
                     <Button x:Name="NextBookBtn" Grid.Column="6" Content="&gt;" Click="NextBookBtn_Click"/>
-                    <TextBlock x:Name="TotalPagesTbl" Grid.Column="8"/>
-                    <TextBlock x:Name="TotalBooksTbl" Grid.Column="12"/>
+                    <TextBlock x:Name="TotalPagesTbl" Text="{Binding TotalPages, StringFormat=из {0}}" Grid.Column="8"/>
+                    <TextBlock x:Name="TotalBooksTbl" Text="{Binding BooksCount}" Grid.Column="12"/>
                 </Grid>
             </Grid>                
             <!--#endregion-->
