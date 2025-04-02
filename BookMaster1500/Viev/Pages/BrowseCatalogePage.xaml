@@ -96,7 +96,7 @@
                     <TextBox x:Name="CurrentPageTb" Grid.Column="4" HorizontalContentAlignment="Center" TextChanged="CurrentPageTb_TextChanged"/>
                     <Button x:Name="NextBookBtn" Grid.Column="6" Content="&gt;" Click="NextBookBtn_Click"/>
                     <TextBlock x:Name="TotalPagesTbl" Text="{Binding TotalPages, StringFormat=из {0}}" Grid.Column="8"/>
-                    <TextBlock x:Name="TotalBooksTbl" Text="{Binding BooksCount}" Grid.Column="12"/>
+                    <TextBlock x:Name="TotalBooksTbl" Text="{Binding BooksCount, StringFormat=Книг найдено: {0}}" Grid.Column="12"/>
                 </Grid>
             </Grid>                
             <!--#endregion-->
