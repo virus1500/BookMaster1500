@@ -23,5 +23,24 @@ namespace BookMaster1500.AppData
         {
             _books = books;
         }
+        // Определяем методы класса для реалезации действий объекта 
+        public List<Book> NextPage()
+        {
+            if (_currentPageIndex < TotalPages - 1)
+            {
+                _currentPageIndex++;
+            }
+
+            return CurrentPageOfBooks;
+
+        }
+        public List<Book> PreviousPage()
+        {
+            if (_currentPageIndex > 0)
+            {
+                _currentPageIndex--;
+            }
+            return CurrentPageOfBooks;
+        }
     }
 }

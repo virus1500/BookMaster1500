@@ -48,7 +48,7 @@ namespace BookMaster1500.Viev.Pages
 
         private void PreviousBookBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            BookAuthorLv.ItemsSource = _booksPageination.PreviousPage();
         }
 
         private void CurrentPageTb_TextChanged(object sender, TextChangedEventArgs e)
@@ -58,7 +58,7 @@ namespace BookMaster1500.Viev.Pages
 
         private void NextBookBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            BookAuthorLv.ItemsSource = _booksPageination.NextPage();
         }
     }
 }
