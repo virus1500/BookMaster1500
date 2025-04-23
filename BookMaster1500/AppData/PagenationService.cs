@@ -1,6 +1,7 @@
 ﻿using BookMaster1500.Model;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Controls;
 
 namespace BookMaster1500.AppData
 {
@@ -14,6 +15,18 @@ namespace BookMaster1500.AppData
 
 
         //Определяем свойства для  вычисления и хранения данных
+        public int CurrentPageNumber
+        {
+            get
+            {
+                return _currentPageNumber = _currentPageIndex + 1;
+            }
+            set
+            {
+                _currentPageNumber = value;
+                _currentPageIndex = value - 1;
+            }
+        }
         public int BooksCount => _books.Count;
         public int TotalPages => (BooksCount + PageSize - 1) / PageSize;
 
@@ -40,6 +53,17 @@ namespace BookMaster1500.AppData
             {
                 _currentPageIndex--;
             }
+            return CurrentPageOfBooks;
+        }
+        public void UpdaitPaginationButtons(Button nextBtn, Button previousBtn)
+        {
+            nextBtn.IsEnabled = _currentPageIndex < TotalPages - 1;
+            previousBtn.IsEnabled = _currentPageIndex > 0;
+        }
+        public List<Book> SetCurrenPage(int pageNumber)
+        {
+            CurrentPageNumber = pageNumber;
+
             return CurrentPageOfBooks;
         }
     }

@@ -41,6 +41,8 @@ namespace BookMaster1500.Viev.Pages
             BookAuthorLv.ItemsSource = _booksPageination.CurrentPageOfBooks;
 
             TotalPagesTbl.DataContext = TotalBooksTbl.DataContext = _booksPageination;
+            _booksPageination.UpdaitPaginationButtons(NextBookBtn, PreviousBookBtn);
+            CurrentPageTb.Text = _booksPageination.CurrentPageNumber.ToString();
 
 
             SearchResultsGrid.Visibility = System.Windows.Visibility.Visible;
@@ -49,16 +51,24 @@ namespace BookMaster1500.Viev.Pages
         private void PreviousBookBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             BookAuthorLv.ItemsSource = _booksPageination.PreviousPage();
+            _booksPageination.UpdaitPaginationButtons(NextBookBtn, PreviousBookBtn);
+            CurrentPageTb.Text = _booksPageination.CurrentPageNumber.ToString();
         }
 
         private void CurrentPageTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (int.TryParse(CurrentPageTb.Text, out int pageNumber) && pageNumber >= 1 && pageNumber <= _booksPageination.TotalPages)
+            {
+                BookAuthorLv.ItemsSource = _booksPageination.SetCurrenPage(pageNumber);
+                _booksPageination.UpdaitPaginationButtons(NextBookBtn, PreviousBookBtn);
+            }
         }
 
         private void NextBookBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             BookAuthorLv.ItemsSource = _booksPageination.NextPage();
+            _booksPageination.UpdaitPaginationButtons(NextBookBtn, PreviousBookBtn);
+            CurrentPageTb.Text = _booksPageination.CurrentPageNumber.ToString();
         }
     }
 }

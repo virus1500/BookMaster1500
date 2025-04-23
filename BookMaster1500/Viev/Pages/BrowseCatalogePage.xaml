@@ -51,13 +51,51 @@
         <!--#endregion-->
 
             <!-- Region Результат поиска-->
-        <Grid x:Name="SearchResultsGrid" Grid.Column="2" Visibility="Hidden">
+        <Grid x:Name="SearchResultsGrid" Grid.Column="2" Visibility="Visible">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="15" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
+        <!--#region подробная информация о книге-->
             
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="300" />
+                </Grid.ColumnDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                </Grid>
+                
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                
+                </Grid>
+            </Grid>
+            <!--#endregion-->
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
