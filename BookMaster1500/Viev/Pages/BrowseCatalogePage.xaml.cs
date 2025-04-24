@@ -70,5 +70,12 @@ namespace BookMaster1500.Viev.Pages
             _booksPageination.UpdaitPaginationButtons(NextBookBtn, PreviousBookBtn);
             CurrentPageTb.Text = _booksPageination.CurrentPageNumber.ToString();
         }
+
+        private void BookAuthorLv_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Book selectedBook = BookAuthorLv.SelectedItem as Book;
+
+            BookDetailsGrid.DataContext = selectedBook;
+        }
     }
 }
