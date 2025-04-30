@@ -35,6 +35,13 @@ namespace BookMaster1500.Model
                 return string.Join(",", BookAuthor.Select(bookAuthor => bookAuthor.Author.Name));
             }
         }
+        public string Subjects
+        {
+            get
+            {
+                return string.Join(",", BookSubject.Select(bookAuthor => bookAuthor.Subject.Title));
+            }
+        }
         public virtual ICollection<BookAuthor> BookAuthor { get; set; }
         public virtual ICollection<BookCover> BookCover { get; set; }
         public virtual ICollection<BookSubject> BookSubject { get; set; }

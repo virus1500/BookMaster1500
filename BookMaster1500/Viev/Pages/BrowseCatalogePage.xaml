@@ -78,7 +78,7 @@
                         <RowDefinition Height="10" />
                         <RowDefinition Height="30" />
                         <RowDefinition Height="5" />
-                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="120" />
                         <RowDefinition Height="10" />
                         <RowDefinition Height="30" />
                         <RowDefinition Height="5" />
@@ -87,12 +87,21 @@
 
                     <TextBlock Text="{Binding Title}" FontSize="30" FontWeight="SemiBold"/>
                     <TextBlock Grid.Row="2"  Text="{Binding Subtitle}"/>
-                    <TextBlock Grid.Row="4"  Text="{Binding Authors}"/>
-                    <TextBlock Grid.Row="6" Text="{Binding FirstPublishDate}"/>
+                    <TextBlock Grid.Row="4">
+                        <Hyperlink x:Name="AuthorDetailsHl" Click="AuthorDetailsHl_Click">
+                            <TextBlock Text="{Binding Authors}"/>
+                        </Hyperlink>
+                    </TextBlock>
+                    
+                    <TextBlock Grid.Row="6" Text="{Binding FirstPublishDate, StringFormat=Год публикации: {0:yyyy}}"/>
                     <TextBlock Grid.Row="8" FontWeight="SemiBold" Text="Описание"/>
-                    <TextBlock Grid.Row="10"  Text="{Binding Description}"/>
+                    <!--ScrollViewer - элемент для проктрутки содежимого-->
+                    <!--Строка/столбец в которой находиться ScrollViewer дложны иметь высоту/ширину в пикселях(px)-->
+                    <ScrollViewer  Grid.Row="10" >
+                        <TextBlock Text="{Binding Description}"/>
+                    </ScrollViewer>
                     <TextBlock Grid.Row="12" Text="Жанры" FontWeight="SemiBold"/>
-                    <TextBlock Grid.Row="14" Text="{Binding}"/>
+                    <TextBlock Grid.Row="14" Text="{Binding Subjects}"/>
 
 
                 </Grid>

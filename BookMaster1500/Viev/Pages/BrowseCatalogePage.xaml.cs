@@ -1,5 +1,6 @@
 ﻿using BookMaster1500.AppData;
 using BookMaster1500.Model;
+using BookMaster1500.Viev.Windows;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
@@ -76,6 +77,12 @@ namespace BookMaster1500.Viev.Pages
             Book selectedBook = BookAuthorLv.SelectedItem as Book;
 
             BookDetailsGrid.DataContext = selectedBook;
+        }
+
+        private void AuthorDetailsHl_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            BookAuthorsDetails bookAuthorsDetailsWindow = new BookAuthorsDetails();
+            bookAuthorsDetailsWindow.ShowDialog();
         }
     }
 }
