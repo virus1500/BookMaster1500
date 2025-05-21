@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookMaster1500.Viev.Windows"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
+        Title="LoginWindow" Height="350" Width="650">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="260" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        
+    <TextBlock Text="Логин" HorizontalAlignment="Center" Grid.Row="1"/>
+        <TextBox Grid.Row="1" Height="50" Width="260" Grid.Column="2"/>
+    <TextBlock Text="Пароль" HorizontalAlignment="Center" Grid.Row="2"/>
+        <TextBox Grid.Row="2" Height="50" Width="260" Grid.Column="2"/>
+        
+        <Grid Grid.Row="3" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            
+            <Button HorizontalAlignment="Left" Content="Вход" Height="40" Width="100"/>
+            <Button HorizontalAlignment="Right" Grid.Column="2" Content="Отмена" Height="40" Width="115"/>
+        </Grid>
     </Grid>
 </Window>

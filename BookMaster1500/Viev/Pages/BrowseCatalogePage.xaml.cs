@@ -13,8 +13,10 @@ namespace BookMaster1500.Viev.Pages
     public partial class BrowseCatalogePage : Page
     {
         List<Book> _books = App.context.Book.ToList();
+        List<BookCover> _covers = App.context.BookCover.ToList();
         //Определяем объект пагинации
-        PagenationService _booksPageination;
+        PagenationService<Book> _booksPageination;
+        PagenationService<BookCover> _coversPageination;
         public BrowseCatalogePage()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace BookMaster1500.Viev.Pages
         {
             if (string.IsNullOrWhiteSpace(SearchByBookTitleTb.Text) && string.IsNullOrWhiteSpace(SearchByAuthorNameTb.Text) && string.IsNullOrWhiteSpace(SearchByBookSubjectTb.Text))
             {
-                _booksPageination = new PagenationService(_books);
+                _booksPageination = new PagenationService<Book>(_books);
 
             }
             else
@@ -35,11 +37,11 @@ namespace BookMaster1500.Viev.Pages
                 //Алгоритм поиска
                 List<Book> seachResults = _books.Where(book => book.Title.ToLower().Contains(SearchByBookTitleTb.Text.ToLower()) && book.Authors.ToLower().Contains(SearchByAuthorNameTb.Text.ToLower())).ToList();
 
-                _booksPageination = new PagenationService(seachResults);
+                _booksPageination = new PagenationService<Book>(seachResults);
 
                 //bookauthorlv.itemssource = _books.where(
             }
-            BookAuthorLv.ItemsSource = _booksPageination.CurrentPageOfBooks;
+            BookAuthorLv.ItemsSource = _booksPageination.CurrentPageOfItems;
 
             TotalPagesTbl.DataContext = TotalBooksTbl.DataContext = _booksPageination;
             _booksPageination.UpdaitPaginationButtons(NextBookBtn, PreviousBookBtn);
