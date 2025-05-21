@@ -83,7 +83,9 @@ namespace BookMaster1500.Viev.Pages
 
         private void AuthorDetailsHl_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            BookAuthorsDetails bookAuthorsDetailsWindow = new BookAuthorsDetails();
+            Book selectedBook = BookAuthorLv.SelectedItem as Book;
+
+            BookAuthorsDetails bookAuthorsDetailsWindow = new BookAuthorsDetails(selectedBook);
             bookAuthorsDetailsWindow.ShowDialog();
         }
     }
