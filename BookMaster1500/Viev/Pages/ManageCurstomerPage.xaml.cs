@@ -1,17 +1,8 @@
-﻿using System;
+﻿using BookMaster1500.Model;
+using BookMaster1500.Viev.Windows;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace BookMaster1500.Viev.Pages
 {
@@ -20,9 +11,17 @@ namespace BookMaster1500.Viev.Pages
     /// </summary>
     public partial class ManageCurstomerPage : Page
     {
+        List<Customer> _customer = App.context.Customer.ToList();
         public ManageCurstomerPage()
         {
             InitializeComponent();
+            CustomerLV.ItemsSource = _customer;
+        }
+
+        private void AddBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            AddEditCustomer addEditCustomer = new AddEditCustomer();
+            addEditCustomer.ShowDialog();
         }
     }
 }
