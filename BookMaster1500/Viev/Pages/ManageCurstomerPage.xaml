@@ -38,12 +38,12 @@
             </Grid.RowDefinitions>
             
             <TextBlock Text="Клиент ID" Grid.Row="1" Grid.Column="1"/>
-            <TextBox Grid.Row="2" Grid.Column="1"/>
+            <TextBox Name="SearchClientIDTb" Grid.Row="2" Grid.Column="1"/>
             
             <TextBlock Text="Имя" Grid.Row="4" Grid.Column="1"/>
-            <TextBox Grid.Row="6" Grid.Column="1"/>
+            <TextBox x:Name="SearchNameTb" Grid.Row="6" Grid.Column="1"/>
 
-            <Button Content="Поиск" Grid.Column="1" Grid.Row="8"/>
+            <Button x:Name="Search" Click="Search_Click" Content="Поиск" Grid.Column="1" Grid.Row="8" Cursor="Hand"/>
 
 
 
