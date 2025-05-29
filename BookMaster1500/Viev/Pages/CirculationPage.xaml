@@ -72,14 +72,41 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="20" />
                 <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="300" />
                 <ColumnDefinition Width="30" />
             </Grid.ColumnDefinitions>
-            <TextBlock Text=""/>
+
+            <TextBlock Text="Отданый / Вернувший" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" FontSize="30"/>
+            <TextBlock Text="ID КНиги" Grid.Column="1" Grid.Row="3"/>
+            <TextBlock Text="Тайтл" Grid.Column="3" Grid.Row="5" VerticalAlignment="top"/>
+            <TextBox Grid.Row="3" Grid.Column="3"/>
+            <Button Content="" Grid.Row="3" Grid.Column="5"/>
+            <Button Content="Обновить" Grid.Row="5" Grid.Column="5"/>
+            <TextBlock Text="Текущий номер" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" FontSize="30"/>
+            <ListView x:Name="CurculatuonLv" Grid.Row="9" Grid.ColumnSpan="7">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Название книги" DisplayMemberBinding="{Binding Title}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Content="Возврат" Grid.Row="11" Grid.Column="5"/>
+            
+            <TextBlock Text="История" Grid.Column="1" Grid.Row="13" Grid.ColumnSpan="3" FontSize="30"/>
+             
+            <ListView x:Name="CustomerLv" Grid.Row="15" Grid.ColumnSpan="7">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Название книги" DisplayMemberBinding="{Binding Title}"/>
+                        <GridViewColumn Header="Имя автора" DisplayMemberBinding="{Binding Authors}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            
         </Grid>
     </Grid>
 </Page>
