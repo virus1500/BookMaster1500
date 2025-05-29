@@ -5,10 +5,71 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BookMaster1500.Viev.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="CirculationPage">
+      d:DesignHeight="800" d:DesignWidth="1580"
+      Title="Абонимент">
 
-    <Grid Background="Firebrick">
-        
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="50" /> 
+                <RowDefinition Height="60" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="30" />
+            </Grid.ColumnDefinitions>
+            
+            <Image Source="O:\GogolevValeriy\EntryLessons\BookMaster1500\BookMaster1500\Resourses\Images\logo.png" Grid.ColumnSpan="5"/>
+            
+            <TextBlock Text="ID Клиента" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"/>
+            
+            <Button Content="Абонимент" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="6"/>
+            
+            <TextBlock Text="213123" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="8"/>
+            <TextBlock Text="213123" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="10"/>
+            
+            <Button Content="Изменить" Grid.Column="3" Grid.Row="12"/>
+            
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" /> 
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+        </Grid>
     </Grid>
 </Page>
