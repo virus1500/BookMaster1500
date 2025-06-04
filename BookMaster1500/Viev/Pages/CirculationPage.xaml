@@ -13,7 +13,7 @@
             <ColumnDefinition Width="400" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <Grid>
+        <Grid x:Name="LeftGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="200"/>
                 <RowDefinition Height="60" />
@@ -41,11 +41,11 @@
             <Image Source="O:\GogolevValeriy\EntryLessons\BookMaster1500\BookMaster1500\Resourses\Images\logo.png" Grid.ColumnSpan="5"/>
             
             <TextBlock Text="ID Клиента" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2"/>
-            <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"/>
+            <TextBox x:Name="ClientIDTb" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"/>
             
-            <Button Content="Абонимент" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="6"/>
-            
-            <TextBlock Text="213123" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="8"/>
+            <Button x:Name="CirculationBtn" Content="Абонимент" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="6" Click="CirculationBtn_Click"/>
+
+            <TextBlock Text="{Binding Customer}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="8"/>
             <TextBlock Text="213123" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="10"/>
             
             <Button Content="Изменить" Grid.Column="3" Grid.Row="12"/>
@@ -84,25 +84,28 @@
             <TextBlock Text="ID КНиги" Grid.Column="1" Grid.Row="3"/>
             <TextBlock Text="Тайтл" Grid.Column="3" Grid.Row="5" VerticalAlignment="top"/>
             <TextBox Grid.Row="3" Grid.Column="3"/>
-            <Button Content="Выдача" Grid.Row="3" Grid.Column="5" Cursor="Hand"/>
-            <Button Content="Обновить" Grid.Row="5" Grid.Column="5"/>
+            <Button Content="Выданный" Grid.Row="3" Grid.Column="5" Cursor="Hand"/>
+            <Button Content="Возврат" Grid.Row="5" Grid.Column="5"/>
             <TextBlock Text="Текущий номер" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" FontSize="30"/>
-            <ListView x:Name="CurculatuonLv" Grid.Row="9" Grid.ColumnSpan="7">
+            <ListView SelectionChanged="CurculatuonLv_SelectionChanged"  x:Name="CurculatuonLv" Grid.Row="9" Grid.ColumnSpan="7">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Название книги" DisplayMemberBinding="{Binding Title}"/>
+                        <GridViewColumn Header="Название книги" DisplayMemberBinding="{Binding Book.Title}"/>
+                        <GridViewColumn Header="Дата выдачи" DisplayMemberBinding="{Binding DateOfIssue, StringFormat= yy.MM.dd}"/>
+                        <GridViewColumn Header="Срок возврата" DisplayMemberBinding="{Binding DateOfReturn, StringFormat= yy.MM.dd}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
-            <Button Content="Возврат" Grid.Row="11" Grid.Column="5"/>
+            <Button Content="Обновить" Grid.Row="11" Grid.Column="5"/>
             
             <TextBlock Text="История" Grid.Column="1" Grid.Row="13" Grid.ColumnSpan="3" FontSize="30"/>
              
-            <ListView x:Name="CustomerLv" Grid.Row="15" Grid.ColumnSpan="7">
+            <ListView x:Name="HistoryCustomerLv" Grid.Row="15" Grid.ColumnSpan="7">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Название книги" DisplayMemberBinding="{Binding Title}"/>
-                        <GridViewColumn Header="Имя автора" DisplayMemberBinding="{Binding Authors}"/>
+                        <GridViewColumn Header="Название книги" DisplayMemberBinding="{Binding Book.Title}"/>
+                        <GridViewColumn Header="Дата выдачи" DisplayMemberBinding="{Binding DateOfIssue, StringFormat= yy.MM.dd}"/>
+                        <GridViewColumn Header="Срок возврата" DisplayMemberBinding="{Binding DateOfReturn, StringFormat= yy.MM.dd}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
