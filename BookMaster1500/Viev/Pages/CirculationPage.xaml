@@ -80,11 +80,11 @@
                 <ColumnDefinition Width="30" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Отданый / Вернувший" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" FontSize="30"/>
+            <TextBlock Text="Выданный / Вернувший" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" FontSize="30"/>
             <TextBlock Text="ID КНиги" Grid.Column="1" Grid.Row="3"/>
             <TextBlock Text="Тайтл" Grid.Column="3" Grid.Row="5" VerticalAlignment="top"/>
             <TextBox Grid.Row="3" Grid.Column="3"/>
-            <Button Content="" Grid.Row="3" Grid.Column="5"/>
+            <Button Content="Выдача" Grid.Row="3" Grid.Column="5"/>
             <Button Content="Обновить" Grid.Row="5" Grid.Column="5"/>
             <TextBlock Text="Текущий номер" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" FontSize="30"/>
             <ListView x:Name="CurculatuonLv" Grid.Row="9" Grid.ColumnSpan="7">
